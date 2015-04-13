@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+#bootstrap gem
+gem 'bootstrap-sass', '~> 3.2.0'
+#optional, but recommended for bootstrap. It automatically adds the proper vendor prefixes to our CSS code when it is compiled.
+gem 'autoprefixer-rails'
+
 # Required for heroku. https://devcenter.heroku.com/articles/getting-started-with-rails4
 gem 'rails_12factor', group: :production
 
