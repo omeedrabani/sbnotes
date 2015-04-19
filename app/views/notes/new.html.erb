@@ -1,0 +1,42 @@
+<h1>New Note</h1>
+
+<p>
+  <%= link_to 'Cancel', notes_path %>
+</p>
+
+<%= form_for :note, url: notes_path do |f| %>
+  
+  <% if @note.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@note.errors.count, "error") %> prohibited
+        this note from being saved:
+      </h2>
+      <ul>
+        <% @note.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+  
+  <p>
+    <li>User Id should be an integer</li>
+    <%= f.label :userId %><br>
+    <%= f.text_field :userId %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Admin Notes</h1>
+
+<p>
+	<%= link_to 'New Note', new_note_path %>
+</p>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Text   </th>
+		<th>User Id</th>
+	</tr>	
+
+	<% @notes.each do |note| %>
+		<tr>
+			<td><%=note.id %></td>
+			<td><%=note.title[0..20] %></td>
+			<td><%=note.text[0..50] %>   </td>
+			<td><%=note.userId %></td>
+			<td><%= link_to 'Show', note_path(note) %></td>
+			<td><%= link_to 'Edit', edit_note_path(note) %></td>
+			<td><%= link_to 'Delete', note_path(note), method: :delete, 
+					data: {confirm: 'Are you sure you want to delete this note?'} %></td>
+
+		</tr>
+	<% end %>
+</table>
