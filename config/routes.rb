@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
    get '/home' => 'static_pages#home'
-   get '/signup' => 'static_pages#signup'
+   get '/signup' => 'users#new'
    get '/about' => 'static_pages#about'
 
 
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :notes
+  resource :users
 
 
   # Example resource route with options:
