@@ -13,8 +13,9 @@
 		<li role="presentation"><a href="/signup">Sign up</a></li>
 		<li role="presentation"><a href="/about">About</a></li>
 	</ul>
-    <div class="container">
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+    <%= debug(params) if Rails.env.develpoment? %>
 	</div>
 </body>
 </html>
