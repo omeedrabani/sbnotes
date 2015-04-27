@@ -10,7 +10,7 @@
 		        <!-- TODO: make this error show up on the same page, without reloading pages ideally. See book chapter 7 should be in there   -->
 		      <ul>
 		        <% @user.errors.full_messages.each do |msg| %>
-		          <li><%= msg %></li>
+		          <li><font color = "FF0000"><%= msg %></font></li>
 		        <% end %>
 		      </ul>
 		    </div>
