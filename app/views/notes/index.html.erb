@@ -9,7 +9,6 @@
 		<th>ID</th>
 		<th>Title</th>
 		<th>Text   </th>
-		<th>User Id</th>
 	</tr>	
 
 	<% @notes.each do |note| %>
@@ -17,7 +16,6 @@
 			<td><%=note.id %></td>
 			<td><%= link_to note.title[0..20], note_path(note) %></td>
 			<td><%=note.text[0..50] %>   </td>
-			<td><%=note.userId %></td>
 			<!-- <td><%= link_to 'Show', note_path(note) %></td> -->
 			<td><%= link_to 'Edit', edit_note_path(note) %></td>
 			<td><%= link_to 'Delete', note_path(note), method: :delete, 

@@ -7,7 +7,11 @@ class NotesController < ApplicationController
 	end
 
 	def show
-		@note = Note.find(params[:id])
+		if Note.exists?(params[:id])
+			@note = Note.find(params[:id])
+		else
+			redirect_to '/notes'
+		end
 	end
 
 	def new

@@ -1,7 +1,18 @@
 class UsersController < ApplicationController
   
+  def index
+    redirect_to current_user
+  end
+
 	def show
-		@user = User.find(params[:id])
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+    end
+    if !logged_in?
+      redirect_to '/'
+    elsif current_user != @user
+      redirect_to current_user
+    end
 	end
 
   def new
@@ -12,7 +23,8 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       flash[:success] = "Congratulations on your new SBNotes account!"
-  		redirect_to "/notes"
+      log_in @user
+  		redirect_to @user
   	else
   		render 'new'
   	end
