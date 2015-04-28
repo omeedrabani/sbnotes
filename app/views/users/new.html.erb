@@ -5,31 +5,20 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
-
+      
       <%= f.label :name %>
-      <%= f.text_field :name , class: 'form-control' %>
+      <%= f.text_field :name , class: 'form-control' %><br>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %><br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password , class: 'form-control' %><br>
+
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation , class: 'form-control' %><br>
 
       <br>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-      <br>
-      <%= f.label :password %>
-      <%= f.password_field :password , class: 'form-control' %>
-      <br>
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation , class: 'form-control' %>
-      <br>
-      <br>
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-            <!-- TODO: make this error show up on the same page, without reloading pages ideally. See book chapter 7 should be in there   -->
-          <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-              <li><font color = "FF0000"><%= msg %></font></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
