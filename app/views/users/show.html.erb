@@ -1,9 +1,9 @@
 
 <font color = "6BBA70"> <p id="notice"><%= flash[:success] %></p> </font>
 
-<%= @user.name %>, <%= @user.email %>
+<p>User: <%= @user.name %>, Registered email: <%= @user.email %></p>
 
 <h1>
-	<%= gravatar_for @user %>
-	<%= @user.name %>
+	<!--<%= gravatar_for @user %>-->
+	Welcome, <%= @user.name %>!
 </h1>
