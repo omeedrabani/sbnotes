@@ -1,9 +1,13 @@
 class NotesController < ApplicationController
-	# http_basic_authenticate_with name: "admin", password: "cs48S15G05*"
+	
 
 	def index
 		# @notes = Note.all
-		@notes = current_user.notes
+		if logged_in?
+			@notes = current_user.notes.order(updated_at: :desc)
+		else
+			redirect_to '/'
+		end
 	end
 
 	def show
