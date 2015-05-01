@@ -3,7 +3,6 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :title
       t.text :text
-      t.integer :userId
 
       t.timestamps null: false
     end
