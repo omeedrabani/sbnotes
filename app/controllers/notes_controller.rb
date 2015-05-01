@@ -1,16 +1,20 @@
 class NotesController < ApplicationController
-	
-	http_basic_authenticate_with name: "admin", password: "cs48S15G05*"
+	# http_basic_authenticate_with name: "admin", password: "cs48S15G05*"
 
 	def index
-		@notes = Note.all
+		# @notes = Note.all
+		@notes = current_user.notes
 	end
 
 	def show
-		if Note.exists?(params[:id])
-			@note = Note.find(params[:id])
+		if logged_in?
+			if Note.exists?(params[:id])
+				@note = Note.find(params[:id])
+			else
+				redirect_to '/notes'
+			end
 		else
-			redirect_to '/notes'
+			redirect_to '/'
 		end
 	end
 
@@ -51,7 +55,7 @@ class NotesController < ApplicationController
 
 	private
 		def note_params
-			params.require(:note).permit(:title, :text, :userId)
+			params.require(:note).permit(:title, :text, :user_id)
 		end
 
 end

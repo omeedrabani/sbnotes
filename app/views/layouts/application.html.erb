@@ -14,6 +14,7 @@
     <li role="presentation"><a href="/about">About</a></li>
 
     <% if logged_in? %>
+    <li role="presentation"><a href="/notes">Notes</a></li>
     <li role="presentation"><a href="/">Settings</a></li>
     <li role="presentation" style="padding-right: 20px; padding-top: 10 px"><%= link_to "Logout", logout_path, method: :delete %></li>
     

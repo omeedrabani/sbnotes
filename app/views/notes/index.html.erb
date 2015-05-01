@@ -1,4 +1,4 @@
-<h1>Admin Notes</h1>
+<h1>Notes</h1>
 
 <p>
 	<%= link_to 'New Note', new_note_path %>
@@ -13,9 +13,13 @@
 
 	<% @notes.each do |note| %>
 		<tr>
-			<td><%=note.id %></td>
+			<td><%= note.id %></td>
 			<td><%= link_to note.title[0..20], note_path(note) %></td>
-			<td><%=note.text[0..50] %>   </td>
+			<td><%= if !note.text.nil?
+						note.text[0..50] 
+					else
+						note.text
+					end	%>   </td>
 			<!-- <td><%= link_to 'Show', note_path(note) %></td> -->
 			<td><%= link_to 'Edit', edit_note_path(note) %></td>
 			<td><%= link_to 'Delete', note_path(note), method: :delete, 

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   def index
     redirect_to current_user
   end

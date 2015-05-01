@@ -4,6 +4,6 @@ class RemoveuserIdFromNotes < ActiveRecord::Migration
   end
 
   def down
-  	add_column :notes, :userId, :integer
+  	add_column :notes, :user_id, :integer
   end
 end
