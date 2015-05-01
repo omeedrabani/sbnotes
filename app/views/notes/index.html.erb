@@ -6,14 +6,14 @@
 
 <table>
 	<tr>
-		<th>ID</th>
+		<!-- <th>ID</th> -->
 		<th>Title</th>
 		<th>Text   </th>
 	</tr>	
 
 	<% @notes.each do |note| %>
 		<tr>
-			<td><%= note.id %></td>
+			<!-- <td><%= note.id %></td> -->
 			<td><%= link_to note.title[0..20], note_path(note) %></td>
 			<td><%= if !note.text.nil?
 						note.text[0..50] 

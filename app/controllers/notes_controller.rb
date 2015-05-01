@@ -8,7 +8,7 @@ class NotesController < ApplicationController
 
 	def show
 		if logged_in?
-			if Note.exists?(params[:id])
+			if Note.exists?(params[:id]) && current_user.id == Note.find(params[:id]).user_id
 				@note = Note.find(params[:id])
 			else
 				redirect_to '/notes'
@@ -28,6 +28,7 @@ class NotesController < ApplicationController
 
 	def create
 		@note = Note.new(note_params)
+		@note.update_attribute(:user_id, current_user.id)
 
 		if @note.save
 			redirect_to @note
