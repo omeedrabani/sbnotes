@@ -28,9 +28,10 @@ class NotesController < ApplicationController
 
 	def create
 		@note = Note.new(note_params)
-		@note.update_attribute(:user_id, current_user.id)
+		
 
 		if @note.save
+			@note.update_attribute(:user_id, current_user.id)
 			redirect_to @note
 		else 
 			render 'new'
