@@ -1,3 +1,34 @@
+
+<br>
+<br>
+
+<!-- 
+	Button formatting learned from following links
+	http://stackoverflow.com/questions/9401942/using-link-to-with-embedded-html
+	http://www.w3schools.com/bootstrap/bootstrap_buttons.asp
+	http://getbootstrap.com/components/#btn-groups
+-->
+
+<div class="btn-group" role="group" aria-label="...">
+	
+	<%= link_to notes_path do %>
+	  	<button type="button" class="btn btn-primary">View Index</button> 
+	<% end %>
+
+	<%= link_to edit_note_path(@note) do %>
+	  	<button type="button" class="btn btn-info">Edit Note</button> 
+	<% end %>
+
+	<%= link_to note_path(@note), method: :delete, 
+					data: {confirm: 'Are you sure you want to delete this note?'} do %>
+	  	<button type="button" class="btn btn-danger">Delete Note</button> 
+	<% end %>
+
+</div>
+
+<!-- Old way of doing links -->
+<!--
+
 <p>
 	<%= link_to 'View Index', notes_path %>
 </p>
@@ -10,6 +41,11 @@
 	<%= link_to 'Delete Note', note_path(@note), method: :delete, 
 					data: {confirm: 'Are you sure you want to delete this note?'} %>
 </p>
+
+-->
+
+<br>
+<br>
 
 <p>
   <strong>Title:</strong>
