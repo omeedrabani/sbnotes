@@ -23,40 +23,63 @@ class NotesController < ApplicationController
 	end
 
 	def new
-		@note = Note.new
+		if logged_in?
+			@note = Note.new
+		else
+			redirect_to '/'
+		end	
 	end
 
 	def edit
-		@note = Note.find(params[:id])
+		if logged_in?
+			if Note.exists?(params[:id]) && current_user.id == Note.find(params[:id]).user_id
+				@note = Note.find(params[:id])
+			else
+				redirect_to '/notes'
+			end
+		else
+			redirect_to '/'
+		end
 	end	
 
 	def create
-		@note = Note.new(note_params)
+		if logged_in?
+			@note = Note.new(note_params)
 		
-
-		if @note.save
-			@note.update_attribute(:user_id, current_user.id)
-			redirect_to @note
-		else 
-			render 'new'
+			if @note.save
+				@note.update_attribute(:user_id, current_user.id)
+				redirect_to @note
+			else 
+				render 'new'
+			end
+		else
+			redirect_to '/'
 		end
 	end
 
 	def update
-		@note = Note.find(params[:id])
+		if logged_in?
+			@note = Note.find(params[:id])
 
-		if @note.update(note_params)
-			redirect_to @note
+			if @note.update(note_params)
+				redirect_to @note
+			else
+				render 'edit'
+			end
 		else
-			render 'edit'
+			redirect_to '/'
 		end
 	end
 
 	def destroy
-		@note = Note.find(params[:id])
-		@note.destroy
+		if logged_in?
+			@note = Note.find(params[:id])
+			@note.destroy
 
-		redirect_to notes_path
+			redirect_to notes_path
+		else
+			redirect_to '/'
+		end
 	end
 
 	private
