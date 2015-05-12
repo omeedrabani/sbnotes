@@ -11,38 +11,13 @@
 
 <div class="btn-group" role="group" aria-label="...">
 	
-	<%= link_to notes_path do %>
-	  	<button type="button" class="btn btn-primary">View Index</button> 
-	<% end %>
+	<%= link_to 'View Index', notes_path, class: "btn btn-primary" %>
 
-	<%= link_to edit_note_path(@note) do %>
-	  	<button type="button" class="btn btn-info">Edit Note</button> 
-	<% end %>
+	<%= link_to 'Edit Note', edit_note_path(@note), class: "btn btn-info" %>
 
-	<%= link_to note_path(@note), method: :delete, 
-					data: {confirm: 'Are you sure you want to delete this note?'} do %>
-	  	<button type="button" class="btn btn-danger">Delete Note</button> 
-	<% end %>
-
-</div>
-
-<!-- Old way of doing links -->
-<!--
-
-<p>
-	<%= link_to 'View Index', notes_path %>
-</p>
-
-<p>
-	<%= link_to 'Edit Note', edit_note_path(@note) %>
-</p>
-
-<p>
 	<%= link_to 'Delete Note', note_path(@note), method: :delete, 
-					data: {confirm: 'Are you sure you want to delete this note?'} %>
-</p>
-
--->
+					data: {confirm: 'Are you sure you want to delete this note?'}, class: "btn btn-danger" %>
+</div>
 
 <br>
 <br>

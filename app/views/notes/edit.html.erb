@@ -1,11 +1,14 @@
 <h1>Edit Note</h1>
  
 <p>
-  <%= link_to 'View Index', notes_path %>
-</p>
 
-<p>
-  <%= link_to 'Cancel edit', note_path(@note) %>
+  <div class="btn-group" role="group" aria-label="...">
+    
+   <%= link_to 'View Index', notes_path, class: "btn btn-primary" %>
+   
+   <%=  link_to 'Cancel Edit', note_path(@note), class: "btn btn-warning" %>
+
+  </div>
 </p>
 
 <%= form_for :note, url: note_path(@note), method: :patch do |f| %>
@@ -14,16 +17,16 @@
  
   <p>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :size=>"75" %>
   </p>
  
   <p>
     <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, :cols=>"75", :rows=>"15"%>
   </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit "Save Note", class: "btn btn-success" %>
   </p>
  
 <% end %>

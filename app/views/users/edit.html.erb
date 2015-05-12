@@ -1,7 +1,9 @@
 <h1>Edit Settings</h1>
  
 <p>
-  <%= link_to 'Cancel', user_path(@user) %>
+  
+  <%= link_to 'Cancel', user_path(@user), class: "btn btn-warning" %>
+
 </p>
 
 
@@ -22,17 +24,12 @@
       <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation , class: 'form-control' %><br>
 
-      <%= f.submit "Save Changes", class: "btn btn-primary" %>
+      <%= f.submit "Save Changes", class: "btn btn-success" %>
     <% end %>
   </div>
 </div>
 
 <br>
 
-<%= link_to user_path, method: :delete, 
-          data: {confirm: 'Are you sure you want to delete your account?'} do %>
-      <button type="button" class="btn btn-danger">Delete Account</button> 
-<% end %>
+<%= link_to 'Delete Account', user_path, method: :delete, data: {confirm: 'Are you sure you want to delete your account?'}, class: "btn btn-danger" %>
 
-
- 

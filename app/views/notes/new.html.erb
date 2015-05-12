@@ -1,7 +1,7 @@
 <h1>New Note</h1>
 
 <p>
-  <%= link_to 'Cancel', notes_path %>
+  <%= link_to 'Cancel', notes_path, class: "btn btn-warning" %>
 </p>
 
 <%= form_for :note, url: notes_path do |f| %>
@@ -9,17 +9,19 @@
   <%= render 'shared/error_messages_note' %>
 
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title %>
+    <br>
+    <%= f.text_field :title, :size=>"50" %>
   </p>
  
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.label :text %>
+    <br>
+    <%= f.text_area :text, :cols=>"75", :rows=>"15"%>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "Save Note", class: "btn btn-success"%>
   </p>
 
 <% end %>

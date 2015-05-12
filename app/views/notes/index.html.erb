@@ -1,30 +1,54 @@
 <h1>Notes</h1>
 
 <p>
-	<%= link_to 'New Note', new_note_path %>
+
+	<%= link_to new_note_path do %>
+	  	<button type="button" class="btn btn-primary">New Note</button> 
+	<% end %>
+
 </p>
 
 <table>
+	<!-- 
 	<tr>
-		<!-- <th>ID</th> -->
 		<th>Title</th>
 		<th>Text   </th>
 	</tr>	
+	-->
+	
+	<br>
 
 	<% @notes.each do |note| %>
 		<tr>
-			<!-- <td><%= note.id %></td> -->
-			<td><%= link_to note.title[0..20], note_path(note) %></td>
-			<td><%= if !note.text.nil?
-						note.text[0..50] 
+			<td style="padding:0 15px 0 0px;" >
+				<%= if note.title.length < 30
+						link_to note.title[0..30], note_path(note), class: "btn btn-default"
+					else
+						link_to note.title[0..30] + "..." , note_path(note), class: "btn btn-default"
+					end %>
+
+			</td>
+			
+			<td style="padding:0 15px 0 0px;">
+				<%= if !note.text.nil?
+						if note.text.length < 70
+							note.text[0..70]
+						else
+							note.text[0..70] + " ..."
+						end
 					else
 						note.text
-					end	%>   </td>
-			<!-- <td><%= link_to 'Show', note_path(note) %></td> -->
-			<td><%= link_to 'Edit', edit_note_path(note) %></td>
-			<td><%= link_to 'Delete', note_path(note), method: :delete, 
-					data: {confirm: 'Are you sure you want to delete this note?'} %></td>
+					end	%>   
+			</td>
+
+			<td>
+				<div class="btn-group" role="group" aria-label="...">
+					<%= link_to 'Edit', edit_note_path(note), class: "btn btn-info" %>
+					<%= link_to 'Delete', note_path(note), method: :delete, data: {confirm: 'Are you sure you want to delete this note?'}, class: "btn btn-danger" %>
+				</div>
+			</td>
 
 		</tr>
+
 	<% end %>
 </table>
