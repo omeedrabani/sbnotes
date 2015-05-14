@@ -29,7 +29,8 @@
  
 <p>
   <strong>Text:</strong>
-  <%= simple_format(@note.text) %>
+  <%= simple_format(@note.text.gsub("\n", "<br />") , {}, :sanitize => false) %>
+
 </p>
 
 

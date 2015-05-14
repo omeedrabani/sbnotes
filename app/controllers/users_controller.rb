@@ -32,17 +32,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    if logged_in?
-      @user = User.new(user_params)
-      if @user.save
-        flash[:success] = "Congratulations on your new SBNotes account!"
-        log_in @user
-        redirect_to @user
-      else
-        render 'new'
-      end
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "Congratulations on your new SBNotes account!"
+      log_in @user
+      redirect_to @user
     else
-      redirect_to '/'
+      render 'new'
     end
   end
 
