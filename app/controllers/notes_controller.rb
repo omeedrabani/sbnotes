@@ -1,8 +1,8 @@
 class NotesController < ApplicationController
 	
-
+	##
+	#@usage:: show list of notes
 	def index
-		# @notes = Note.all
 		if logged_in?
 			@notes = current_user.notes.order(updated_at: :desc)
 		else
@@ -10,6 +10,8 @@ class NotesController < ApplicationController
 		end
 	end
 
+	##
+	#@usage:: if note exists and access allowed, show note; otherwise, redirect to index
 	def show
 		if logged_in?
 			if Note.exists?(params[:id]) && current_user.id == Note.find(params[:id]).user_id
@@ -22,6 +24,8 @@ class NotesController < ApplicationController
 		end
 	end
 
+	##
+	#@usage:: create new note if logged in
 	def new
 		if logged_in?
 			@note = Note.new
@@ -30,6 +34,8 @@ class NotesController < ApplicationController
 		end	
 	end
 
+	##
+	#@usage:: if note exists and access allowed, show note; otherwise, redirect to index
 	def edit
 		if logged_in?
 			if Note.exists?(params[:id]) && current_user.id == Note.find(params[:id]).user_id
@@ -42,6 +48,8 @@ class NotesController < ApplicationController
 		end
 	end	
 
+	##
+	#@usage:: create new note if logged in, and save it with the user_id
 	def create
 		if logged_in?
 			@note = Note.new(note_params)
@@ -57,6 +65,8 @@ class NotesController < ApplicationController
 		end
 	end
 
+	##
+	#@usage:: edit existing note if logged in
 	def update
 		if logged_in?
 			@note = Note.find(params[:id])
@@ -71,6 +81,8 @@ class NotesController < ApplicationController
 		end
 	end
 
+	##
+	#@usage:: destroy note if logged in
 	def destroy
 		if logged_in?
 			@note = Note.find(params[:id])

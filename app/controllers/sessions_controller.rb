@@ -1,10 +1,14 @@
 class SessionsController < ApplicationController
+  ##
+  #@usage:: if already logged in, redirect
   def new
   	if logged_in?
   		redirect_to current_user
   	end
   end
 
+  ##
+  #@usage:: create new session using user credentials
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
@@ -18,6 +22,8 @@ class SessionsController < ApplicationController
     end
   end
 
+  ##
+  #@usage:: destroy current session
   def destroy
   	log_out if logged_in?
   	redirect_to root_url
