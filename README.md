@@ -2,8 +2,8 @@ README FILE
 
 SBNotes for CS32
 
-Instructor: Mike Costanzo
-Authors: Andrew Tran, Ishi Von Meier, Nicholas Poon, Omeed Rabani, Yamen Alghrer
+Instructor: Mike Costanzo  
+Authors: Andrew Tran, Ishi Von Meier, Nicholas Poon, Omeed Rabani, Yamen Alghrer  
 Date: May 15 2015
 
 
@@ -15,11 +15,11 @@ Date: May 15 2015
 
 
 CONTENTS
-I.		SETTING UP GIT
-II.		INSTALLING RUBY USING RVM
-III.	INSTALLING RAILS
-IV.		POSTGRESQL
-V.		FINISHING TOUCHES
+I.		SETTING UP GIT  
+II.		INSTALLING RUBY USING RVM  
+III.	INSTALLING RAILS  
+IV.		POSTGRESQL  
+V.		FINISHING TOUCHES  
 
 
 
@@ -32,7 +32,7 @@ Install Git and cloning repository to system:
 	$ sudo apt-get install git
 	$ git clone https://github.com/omeedrabani/sbnotes.git
 
-
+Or instead move the files from the USB into the folder you will be working in.
 
 
 
@@ -137,7 +137,7 @@ Change directory into root of SBNotes
 Install all the remaining Gems listed in the Gemfile
 
 	$ bundle install
-	
+
 	*** If the message "You need to install postgresql-server-dev ... or libpq-dev" shows ***
 	*** libpq-dev needs to be installed													  ***
 
@@ -155,7 +155,5 @@ Starting up the server
 
 
 
-
-
-	### YOU HAVE SUCCESSFULLY SET UP SBNOTES LOCALLY. TO ACCESS THE WEBPAGE ###
-	###  ENTER YOUR PREFERRED WEB BROWSER AND NAVIGATE TO "localhost:3000"  ###
+YOU HAVE SUCCESSFULLY SET UP SBNOTES LOCALLY. TO ACCESS THE WEBPAGE 
+ENTER YOUR PREFERRED WEB BROWSER AND NAVIGATE TO "localhost:3000" 
