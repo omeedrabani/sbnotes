@@ -173,6 +173,10 @@ Starting up the server
 	$ rake db:migrate
 	$ rails server
 
+In order to run the unit tests  
+
+	$ bundle exec rake test
+
 
 
 
