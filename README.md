@@ -9,6 +9,24 @@ Date: May 15 2015
 URL: www.sbnotes.me  
 
 
+Directory Structure Main Files (which files are most important and why)  
+	
+	app/  
+		controllers: These files hold the methods for the project.  
+		helpers: These hold any additional helper functions for the main methods.  
+		models: These are our own created classes.  
+		views: These are html templates that are used when browsing the site and are filled in with data.  
+	
+	config/  
+		routes.rb: This file organizes the routing of the site. It organizes which paths are associated with what variables. This is used when redirecting the user from page to page.  
+
+	db/
+		migrate: These are scripts that make changes to the format of the database.  
+
+	test/  : Testing will be organized throughout this folder  
+		fixtures: These are generic placeholders for when doing testing.  
+
+	
 
 
 ### Setting up development environment for SBNotes on Ubuntu###
@@ -152,6 +170,7 @@ Install all the remaining Gems listed in the Gemfile
 Starting up the server
 
 	$ rake db:setup
+	$ rake db:migrate
 	$ rails server
 
 
