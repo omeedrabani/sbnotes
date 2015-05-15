@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  text: MyText
-  userId: 1
+  title: My First Title
+  text: Lookie here!
+  user_id: 1
 
 two:
-  title: MyString
-  text: MyText
-  userId: 1
+  title: My Second Title
+  text: Boo!
+  user_id: 1
