@@ -4,7 +4,9 @@ SBNotes for CS32
 
 Instructor: Mike Costanzo  
 Authors: Andrew Tran, Ishi Von Meier, Nicholas Poon, Omeed Rabani, Yamen Alghrer  
-Date: May 15 2015
+Date: May 15 2015  
+
+URL: www.sbnotes.me  
 
 
 
@@ -14,7 +16,7 @@ Date: May 15 2015
 
 
 
-CONTENTS
+CONTENTS  
 I.		SETTING UP GIT  
 II.		INSTALLING RUBY USING RVM  
 III.	INSTALLING RAILS  
@@ -157,3 +159,5 @@ Starting up the server
 
 YOU HAVE SUCCESSFULLY SET UP SBNOTES LOCALLY. TO ACCESS THE WEBPAGE 
 ENTER YOUR PREFERRED WEB BROWSER AND NAVIGATE TO "localhost:3000" 
+
+If there are any difficulties setting up, you can also visit www.sbnotes.me to the site in its native form.
