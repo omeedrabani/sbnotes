@@ -8,6 +8,12 @@
   
   <%= render 'shared/error_messages_note' %>
 
+  <br>
+  <p>
+    <%= f.check_box :is_public %>
+    <%= f.label "Make this note public" %>
+  </p>
+
   <p>
     <%= f.label :title %>
     <br>

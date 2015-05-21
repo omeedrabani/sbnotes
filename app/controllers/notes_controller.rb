@@ -14,13 +14,17 @@ class NotesController < ApplicationController
 	#@usage:: if note exists and access allowed, show note; otherwise, redirect to index
 	def show
 		if logged_in?
-			if Note.exists?(params[:id]) && current_user.id == Note.find(params[:id]).user_id
+			if Note.exists?(params[:id]) && ( current_user.id == Note.find(params[:id]).user_id || Note.find(params[:id]).is_public? )
 				@note = Note.find(params[:id])
 			else
 				redirect_to '/notes'
 			end
 		else
-			redirect_to '/'
+			if Note.exists?(params[:id]) && Note.find(params[:id]).is_public?
+				@note = Note.find(params[:id])
+			else
+				redirect_to '/'
+			end
 		end
 	end
 
@@ -96,7 +100,7 @@ class NotesController < ApplicationController
 
 	private
 		def note_params
-			params.require(:note).permit(:title, :text, :user_id)
+			params.require(:note).permit(:title, :text, :user_id, :is_public)
 		end
 
 end

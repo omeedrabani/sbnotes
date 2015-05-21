@@ -9,28 +9,31 @@
 	http://getbootstrap.com/components/#btn-groups
 -->
 
-<div class="btn-group" role="group" aria-label="...">
-	
-	<%= link_to 'View Index', notes_path, class: "btn btn-primary" %>
+<% if logged_in? && current_user.id == @note.user_id %>
+	<div class="btn-group" role="group" aria-label="...">
+		
+		<%= link_to 'View Index', notes_path, class: "btn btn-primary" %>
 
-	<%= link_to 'Edit Note', edit_note_path(@note), class: "btn btn-info" %>
+		<%= link_to 'Edit Note', edit_note_path(@note), class: "btn btn-info" %>
 
-	<%= link_to 'Delete Note', note_path(@note), method: :delete, 
-					data: {confirm: 'Are you sure you want to delete this note?'}, class: "btn btn-danger" %>
-</div>
+		<%= link_to 'Delete Note', note_path(@note), method: :delete, 
+						data: {confirm: 'Are you sure you want to delete this note?'}, class: "btn btn-danger" %>
+	</div>
+ <% end %>
+
 
 <br>
 <br>
 
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
+
+<% if @note.is_public? %>
+	<strong>This note is public.</strong>
+<% end %>
+
+<h1><%= @note.title %></h1>
  
 <p>
-  <strong>Text:</strong>
   <%= simple_format(@note.text.gsub("\n", "<br />") , {}, :sanitize => false) %>
-
 </p>
 
 
