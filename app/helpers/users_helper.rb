@@ -6,7 +6,7 @@ module UsersHelper
 	end
 
 
-	def is_public?
-		User.find(params[:id]).is_public?
-	end
+	# def is_public?
+	# 	User.find(params[:id]).is_public?
+	# end
 end

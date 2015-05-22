@@ -10,6 +10,14 @@ class NotesController < ApplicationController
 		end
 	end
 
+	def public
+		if logged_in?
+			@notes = current_user.notes.where(is_public: true).order(updated_at: :desc)
+		else
+			redirect_to '/'
+		end
+	end
+
 	##
 	#@usage:: if note exists and access allowed, show note; otherwise, redirect to index
 	def show

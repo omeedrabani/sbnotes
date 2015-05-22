@@ -11,12 +11,12 @@
 	
 	<br>
 
-
-	<!-- TODO: sort users alphabetically in table -->
+<!--TODO: add pagination!!-->
+	
 	<% @users.each do |user| %>
 		<tr>
 			<td style="padding:0 15px 0 0px;" >
-				<%= link_to user.name, class: "btn btn-default" %>
+				<%= link_to user.name, notes_public_path(user) , class: "btn btn-default" %>
 			</td>
 
 	<% end %>

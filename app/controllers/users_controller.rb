@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #could put in before_action here to make sure user is logged in
+
   ##
   #@usage:: redirects to current user
   def index

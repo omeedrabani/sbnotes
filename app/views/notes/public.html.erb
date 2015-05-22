@@ -1,14 +1,13 @@
-<h1>Notes</h1>
+<h1>This Persons Public Notes</h1>
+<!--TODO: make this ^^say the viewed user's name embedded in h1-->
 
-<!--TODO: check if user is logged in and if notes page you're trying to open is yours, if either of these -->
-
-<p>
+<!-- <p>
 
 	<%= link_to new_note_path do %>
 	  	<button type="button" class="btn btn-primary">New Note</button> 
 	<% end %>
 
-</p>
+</p> -->
 
 <table>
 	<!-- 
@@ -18,6 +17,8 @@
 	</tr>	
 	-->
 	
+
+	<!--need to change note paths below to a new public view with no edit/delete features-->
 	<br>
 
 	<% @notes.each do |note| %>
@@ -43,12 +44,12 @@
 					end	%>   
 			</td>
 
-			<td>
+<!-- 			<td>
 				<div class="btn-group" role="group" aria-label="...">
 					<%= link_to 'Edit', edit_note_path(note), class: "btn btn-info" %>
 					<%= link_to 'Delete', note_path(note), method: :delete, data: {confirm: 'Are you sure you want to delete this note?'}, class: "btn btn-danger" %>
 				</div>
-			</td>
+			</td> -->
 
 		</tr>
 
