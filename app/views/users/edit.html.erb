@@ -24,8 +24,8 @@
       <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation , class: 'form-control' %><br>
 
-      <%= f.label "Make your profile public" %>
-      <%= f.check_box :is_public %>
+      <%= f.label :is_public, "Make My Profile Public" %><br>
+      <%= f.check_box :is_public %><br><br>
 
       <%= f.submit "Save Changes", class: "btn btn-success" %>
     <% end %>

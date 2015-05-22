@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def list
-    @users = User.all.order('name')
+    @users = User.all.where("is_public").order('LOWER(name)')
   end  
 
   ##
@@ -91,6 +91,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password, 
-        :password_confirmation)
+        :password_confirmation, :is_public)
     end
 end
