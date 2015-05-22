@@ -1,0 +1,33 @@
+<h1>Users</h1>
+
+# <p>
+
+# 	<%= link_to new_note_path do %>
+# 	  	<button type="button" class="btn btn-primary">New Note</button> 
+# 	<% end %>
+
+# </p>
+
+<table>
+	<!-- 
+	<tr>
+		<th>Title</th>
+		<th>Text   </th>
+	</tr>	
+	-->
+	
+	<br>
+
+
+	#TODO: sort users alphabetically in table
+	<% @users.each do |user| %>
+		<tr>
+			<td style="padding:0 15px 0 0px;" >
+				<%= if user.is_pulic?
+						link_to user.name, user.note_path, class: "btn btn-default"
+					end %>
+
+			</td>
+
+	<% end %>
+</table>

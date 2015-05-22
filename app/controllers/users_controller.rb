@@ -2,14 +2,15 @@ class UsersController < ApplicationController
   ##
   #@usage:: redirects to current user
   def index
-    redirect_to current_user
+    #redirect_to current_user
+    @users = users.all
   end
 
   ##
   #@usage:: show user page if logged in
   def show
     if logged_in?
-      if User.exists?(params[:id]) && current_user.id == User.find(params[:id]).id
+      if User.exists?(params[:id]) && (current_user.id == User.find(params[:id]).id || User.find(params[:id]).is_public?)
         @user = User.find(params[:id])
       else
         redirect_to '/users'

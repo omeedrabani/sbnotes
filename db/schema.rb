@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150521025003) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.boolean  "is_public",  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
