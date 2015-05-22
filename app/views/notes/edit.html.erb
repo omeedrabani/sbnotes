@@ -1,5 +1,5 @@
 <h1>Edit Note</h1>
- 
+
 <p>
 
   <div class="btn-group" role="group" aria-label="...">
@@ -29,9 +29,10 @@
  
   <p>
     <%= f.label :text %><br>
-    <%= f.text_area :text, :cols=>"75", :rows=>"15"%>
+    <!--<%= f.text_area :text, :cols=>"75", :rows=>"15"%>-->
+    <%= f.cktext_area :text, :cols=>"75", :rows=>"15" %>
   </p>
- 
+
   <p>
     <%= f.submit "Save Note", class: "btn btn-success" %>
   </p>
