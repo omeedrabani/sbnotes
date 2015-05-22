@@ -4,4 +4,9 @@ module UsersHelper
 		gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
 		image_tag(gravatar_url, alt: user.name, class: "gravatar")
 	end
+
+
+	def is_public?
+		User.find(params[:id]).is_public?
+	end
 end

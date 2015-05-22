@@ -2,9 +2,12 @@ class UsersController < ApplicationController
   ##
   #@usage:: redirects to current user
   def index
-    #redirect_to current_user
-    @users = users.all
+    redirect_to current_user
   end
+
+  def list
+    @users = User.all.order('name')
+  end  
 
   ##
   #@usage:: show user page if logged in
