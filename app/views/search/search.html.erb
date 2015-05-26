@@ -3,33 +3,44 @@
 <%= form_for search_path, method: :get do |f| %>
 	<p>
 		<%= text_field_tag :query, params[:query] %>
-		<%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+		<%= submit_tag "Search", name: nil, class: "btn btn-primary" %> <!--add error for empty search box-->
 	</p>
 <% end %>
 
-<table>
-	<% @notes.each do |note| %>
-		<tr>
-			<td style="padding:0 15px 0 0px;" >
-				<%= if note.title.length < 30
-						link_to note.title[0..30], note_path(note), class: "btn btn-default"
-					else
-						link_to note.title[0..30] + "..." , note_path(note), class: "btn btn-default"
-					end %>
 
-			</td>
-			
-			<td style="padding:0 15px 0 0px;">
-				<%= if !note.text.nil?
-						if note.text.length < 70
-							note.text[0..70]
+<% if params.include?(:query) && @notes == [] %>
+	<p>No notes found with those keywords</p>
+<% else %>
+	<table>
+		<% @notes.each do |note| %>
+			<tr>
+				<td style="padding-right: 10px; padding-top: 10 px">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					<%= note.user.name %>
+				</td>
+		
+				<td style="padding:0 15px 0 0px;" >
+					<%= if note.title.length < 30
+							link_to note.title[0..30], note_path(note), class: "btn btn-default"
 						else
-							note.text[0..70] + " ..."
-						end
-					else
-						note.text
-					end	%>   
-			</td>
-		</tr>
-	<% end %>	
-</table>
+							link_to note.title[0..30] + "..." , note_path(note), class: "btn btn-default"
+						end %>
+
+				</td>
+				
+				<td style="padding:0 15px 0 0px;">
+					<%= if !note.text.nil?
+							if note.text.length < 70
+								note.text[0..70]
+							else
+								note.text[0..70] + " ..."
+							end
+						else
+							note.text
+						end	%>   
+				</td>
+
+			</tr>
+		<% end %>	
+	</table>
+<% end %>
