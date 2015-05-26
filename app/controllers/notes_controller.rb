@@ -11,11 +11,11 @@ class NotesController < ApplicationController
 	end
 
 	def public
-		if logged_in?
-			@notes = current_user.notes.where(is_public: true).order(updated_at: :desc)
-		else
-			redirect_to '/'
-		end
+		# if logged_in?
+		# 	@notes = current_user.notes.where(is_public: true).order(updated_at: :desc)
+		# else
+		# 	redirect_to '/'
+		# end
 	end
 
 	##
@@ -35,6 +35,7 @@ class NotesController < ApplicationController
 			end
 		end
 	end
+
 
 	##
 	#@usage:: create new note if logged in

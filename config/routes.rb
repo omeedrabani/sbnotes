@@ -16,6 +16,8 @@ Rails.application.routes.draw do
    get '/signup' => 'users#new'
    get '/about' => 'static_pages#about'
    get '/list' => 'users#list'
+   get '/search' => 'search#search'
+
 
    get 'login' => 'sessions#new'
    post 'login' => 'sessions#create'
@@ -29,6 +31,8 @@ Rails.application.routes.draw do
   resources :notes
   resources :users
 
+
+  #map.resources :notes, :collection => { :search => [ :post, :get ] }
 
   # Example resource route with options:
   #   resources :products do
