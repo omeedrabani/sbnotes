@@ -6,7 +6,7 @@ class Note < ActiveRecord::Base
 	def self.search(search)
 	  query = "%#{search}%"
 	  if search
-	    self.where("title like ? or text like ?", query, query)
+	    self.where("title ILIKE ? or text ILIKE ?", query, query)
 	  else
 	    self.all
 	  end
