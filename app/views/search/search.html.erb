@@ -13,34 +13,35 @@
 <% else %>
 	<table>
 		<% @notes.each do |note| %>
-			<tr>
-				<td style="padding-right: 10px; padding-top: 10 px">
-					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-					<%= note.user.name %>
-				</td>
-		
-				<td style="padding:0 15px 0 0px;" >
-					<%= if note.title.length < 30
-							link_to note.title[0..30], note_path(note), class: "btn btn-default"
-						else
-							link_to note.title[0..30] + "..." , note_path(note), class: "btn btn-default"
-						end %>
-
-				</td>
-				
-				<td style="padding:0 15px 0 0px;">
-					<%= if !note.text.nil?
-							if note.text.length < 70
-								note.text[0..70]
+			<% if note.is_public? %>
+				<tr>
+					<td style="padding-right: 10px; padding-top: 10 px">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<%= note.user.name %>
+					</td>
+			
+					<td style="padding:0 15px 0 0px;" >
+						<%= if note.title.length < 30
+								link_to note.title[0..30], note_path(note), class: "btn btn-default"
 							else
-								note.text[0..70] + " ..."
-							end
-						else
-							note.text
-						end	%>   
-				</td>
+								link_to note.title[0..30] + "..." , note_path(note), class: "btn btn-default"
+							end %>
 
-			</tr>
+					</td>
+					
+					<td style="padding:0 15px 0 0px;">
+						<%= if !note.text.nil?
+								if note.text.length < 70
+									note.text[0..70]
+								else
+									note.text[0..70] + " ..."
+								end
+							else
+								note.text
+							end	%>   
+					</td>
+				</tr>
+			<% end %>
 		<% end %>	
 	</table>
 <% end %>
