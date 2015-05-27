@@ -31,10 +31,10 @@
 					
 					<td style="padding:0 15px 0 0px;">
 						<%= if !note.text.nil?
-								if note.text.length < 70
-									note.text[0..70]
+								if strip_tags(simple_format(note.text)).length < 150
+									strip_tags(simple_format(note.text[0..150]))
 								else
-									note.text[0..70] + " ..."
+									strip_tags(simple_format(note.text[0..150])) + " ..."
 								end
 							else
 								note.text

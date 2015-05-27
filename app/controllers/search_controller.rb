@@ -6,7 +6,7 @@ def search
 	if params[:query].nil?
 		@notes = []
 	else
-		@notes = Note.search params[:query]
+		@notes = Note.search(params[:query]).order(updated_at: :desc)
 	end	
 end
 
