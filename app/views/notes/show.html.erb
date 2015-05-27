@@ -14,7 +14,7 @@
 		
 		<%= link_to 'View Index', notes_path, class: "btn btn-primary" %>
 
-		<%= link_to 'Edit Note', edit_note_path(@note), class: "btn btn-info" %>
+		<%= link_to 'Edit Note', edit_note_path(@note), data: { no_turbolink: true }, class: "btn btn-info" %>
 
 		<%= link_to 'Delete Note', note_path(@note), method: :delete, 
 						data: {confirm: 'Are you sure you want to delete this note?'}, class: "btn btn-danger" %>
