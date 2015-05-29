@@ -2,7 +2,7 @@
 
 <%= form_for search_path, method: :get do |f| %>
 	<p>
-		<%= text_field_tag :query, params[:query] %>
+		<%= text_field_tag :query, params[:query],:size=>"45" %>
 		<%= submit_tag "Search", name: nil, class: "btn btn-primary" %> <!--add error for empty search box-->
 	</p>
 <% end %>
