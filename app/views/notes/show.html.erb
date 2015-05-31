@@ -22,7 +22,7 @@
 		
 	<% if @note.is_public? %>
 
-    	<%= mail_to( "","Email URL", subject: @note.title + " by " + @note.user.name, body: "www.sbnotes.me/notes/" + @note.id.to_s(), class: "btn btn-default") %>
+    	<%= mail_to( "","Email URL", subject: '"' + @note.title + '"' + " by " + @note.user.name, body: "www.sbnotes.me/notes/" + @note.id.to_s(), class: "btn btn-default") %>
 
 	<% end %>	
 
