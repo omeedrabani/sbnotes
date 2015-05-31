@@ -35,7 +35,7 @@
 <h1><%= @note.title %></h1>
  
 <p>
-  <%= simple_format(@note.text.gsub("\n", "<br />") , {}, :sanitize => false) %>
+  <%= raw(@note.text) %>
 </p>
 
 
