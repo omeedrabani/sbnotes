@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'notes/public'
 
   get 'sessions/new'
@@ -30,7 +34,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :notes
   resources :users
-
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
   #map.resources :notes, :collection => { :search => [ :post, :get ] }
 
