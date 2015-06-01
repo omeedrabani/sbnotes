@@ -1,15 +1,11 @@
-
-<br>
-<br>
-
 <!-- 
 	Button formatting learned from following links
 	http://stackoverflow.com/questions/9401942/using-link-to-with-embedded-html
 	http://www.w3schools.com/bootstrap/bootstrap_buttons.asp
 	http://getbootstrap.com/components/#btn-groups
 -->
-
 <% if logged_in? && current_user.id == @note.user_id %>  <!--check if current user's note, if not omit edit, delete, index functions -->
+	<br>
 	<div class="btn-group" role="group" aria-label="...">
 		
 		<%= link_to 'View Index', notes_path, class: "btn btn-primary" %>
@@ -23,26 +19,22 @@
 	<% if @note.is_public? %>
 
     	<%= mail_to( "","Email URL", subject: '"' + @note.title + '"' + " by " + @note.user.name, body: "www.sbnotes.me/notes/" + @note.id.to_s(), class: "btn btn-default") %>
+    	<br>
 
 	<% end %>	
 
 <% else %>
 
-	<h3>Note by: <%= @note.user.name %> <%= mail_to( "","Email URL", subject: '"' + @note.title + '"' + " by " + @note.user.name, body: "www.sbnotes.me/notes/" + @note.id.to_s(), class: "btn btn-default") %> </h3>
+	<h4>Note by: <%= @note.user.name %> <%= mail_to( "","Email URL", subject: '"' + @note.title + '"' + " by " + @note.user.name, body: "www.sbnotes.me/notes/" + @note.id.to_s(), class: "btn btn-default") %> </h4>
 
 <% end %>
-
-<br>
 
 <% if @note.is_public? %>
-	<strong>This note is public.</strong>
+	<span class="label label-default"><em>This note is public.</em></span>
 <% end %>
 
-<br>
-
-
 <h1><%= @note.title %></h1>
- 
+<hr>
 <p>
   <%= raw(@note.text) %>
 </p>
