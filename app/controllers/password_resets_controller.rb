@@ -55,6 +55,7 @@ class PasswordResetsController < ApplicationController
     def valid_user
       unless (@user &&
               @user.authenticated?(params[:id]))
+        puts "Redirection occurred here."
         redirect_to root_url
       end
     end
