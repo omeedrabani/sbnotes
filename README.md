@@ -1,17 +1,17 @@
 #SBNotes for CS48
 
-**Instructor: Mike Costanzo ** 
-**Authors: Andrew Tran, Ishi Von Meier, Nicholas Poon, Omeed Rabani, Yamen Alghrer  **
-**Date: May 15 2015  **
+**Instructor: Mike Costanzo** 
+**Authors: Andrew Tran, Ishi Von Meier, Nicholas Poon, Omeed Rabani, Yamen Alghrer**
+**Date: May 15 2015**
 
-**URL: www.sbnotes.me  **
+**URL: www.sbnotes.me**
 
 
 
 
 ##Directory Structure Main Files (Description of most important files/folders)
 	
-	#app/ : Application components
+	###app/ : Application components
 		-controllers/: Contains controller classes which handle web requests from the user.
 		-helpers/: Holds any helper classes used to assist the model, view, and controller classes.
 		-models/: These are our own created classes.  
@@ -19,12 +19,12 @@
 	
 
 
-	#bin/ : Contains executables
+	###bin/ : Contains executables
 		-bundle/
 		-rails/
 		-rake/
 
-	#ckeditor/ : Directory for CKEDITOR, a text editor incorporated with Note feature.
+	###ckeditor/ : Directory for CKEDITOR, a text editor incorporated with Note feature.
 
 			*** SOURCE: http://ckeditor.com/
 			*** GITHUB: https://github.com/ckeditor/ckeditor-dev
@@ -44,36 +44,36 @@
 
 
 
-	#config/  
+	###config/  
 		-routes.rb: This file organizes the routing of the site. It organizes which paths are associated with what variables. This is used when redirecting the user from page to page.  
 
 	
 	
-	#db/
+	###db/
 		-migrate/: These are scripts that make changes to the format of the database.  
 
 	
 
-	#log/ : Contains error logs
+	###log/ : Contains error logs
 		-development.log: Error log for Rails development environment.
 
 
 
-	#public/ : Directory for web files (HTML files, stylesheets, graphics, Javascript files)
+	###public/ : Directory for web files (HTML files, stylesheets, graphics, Javascript files)
 		-assets/: Contains directories bootstrap/ and ckeditor/
 
 	
 	
-	#test/ : Testing will be organized throughout this folder  
+	###test/ : Testing will be organized throughout this folder  
 		-fixtures/: These are generic placeholders for when doing testing.  
 
 
 
-	#tmp/ : Contains emporary files for intermediate processing.
+	###tmp/ : Contains emporary files for intermediate processing.
 
 
 
-	#vendor/ : Libraries provided by third-party vendors
+	###vendor/ : Libraries provided by third-party vendors
 
 
 
