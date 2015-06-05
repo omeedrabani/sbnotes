@@ -94,7 +94,7 @@
 2.		Installing Ruby Using RVM  
 3.		Installing Rails  
 4.		POSTGRESQL  
-5.		Finishing 
+5.		Finishing / additional commands
 
 
 
@@ -111,7 +111,7 @@ Or instead move the files from the USB into the folder you will be working in.
 
 
 
-#####2.	INSTALLING RUBY USING RVM
+#####2.	Installing Ruby using RVM
 
 Update package manager
 
@@ -172,7 +172,7 @@ Install Nokogiri
 
 
 
-#####3. INSTALLING RAILS
+#####3. Installing Rails
 
 Optional for installing Rails into project-specific gemset
 
@@ -203,7 +203,7 @@ Creating user role in PostgreSQL
 
 
 
-#####5.	FINISHING 
+#####5.	Finishing / additional commands
 
 Change directory into root of SBNotes
 
