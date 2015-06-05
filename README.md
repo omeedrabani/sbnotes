@@ -11,8 +11,9 @@
 
 
 
-####Directory Structure Main Files 
-#####(Description of most important files/folders)
+
+###Directory Structure Main Files 
+######(Description of most important files/folders)
 
 	app/ : Application components
 		-controllers/: Contains controller classes which handle web requests from the user.
@@ -81,22 +82,22 @@
 
 
 
-####Setting up development environment for SBNotes on Linux OS
+###Setting up development environment for SBNotes on Linux OS
 
 
-######Contents
+#####Contents
 
-I.		Setting Up Git 
-II.		Installing Ruby Using RVM  
-III.	Installing Rails  
-IV.		POSTGRESQL  
-V.		Finishing 
-
-
+1.		Setting Up Git 
+2.		Installing Ruby Using RVM  
+3.	Installing Rails  
+4.		POSTGRESQL  
+5.		Finishing 
 
 
 
-######I.	Setting up Git
+
+
+#####1.	Setting up Git
 
 Install Git and cloning repository to system:
 	
@@ -107,7 +108,7 @@ Or instead move the files from the USB into the folder you will be working in.
 
 
 
-######II.	INSTALLING RUBY USING RVM
+#####2.	INSTALLING RUBY USING RVM
 
 Update package manager
 
@@ -168,7 +169,7 @@ Install Nokogiri
 
 
 
-######III. INSTALLING RAILS
+#####3. INSTALLING RAILS
 
 Optional for installing Rails into project-specific gemset
 
@@ -183,7 +184,7 @@ Install Rails
 
 
 
-######IV.	POSTGRESQL
+#####4.	POSTGRESQL
 
 Install PostgreSQL and PostGIS
 
@@ -199,7 +200,7 @@ Creating user role in PostgreSQL
 
 
 
-######V.	FINISHING 
+#####5.	FINISHING 
 
 Change directory into root of SBNotes
 
