@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 geralt:
-  id: 1
   name: Geralt
   email: geralt@rivia.net
-  password_digest: <%= User.digest("password") %>
+  password_digest: <%= User.digest('password') %>
