@@ -1,51 +1,102 @@
-README FILE
+#SBNotes for CS48
 
-SBNotes for CS32
+**Instructor:** Mike Costanzo
 
-Instructor: Mike Costanzo  
-Authors: Andrew Tran, Ishi Von Meier, Nicholas Poon, Omeed Rabani, Yamen Alghrer  
-Date: May 15 2015  
+**Authors:** Andrew Tran, Ishi Von Meier, Nicholas Poon, Omeed Rabani, Yamen Alghrer
 
-URL: www.sbnotes.me  
+**Date:** May 15 2015
+
+**URL:** www.sbnotes.me
 
 
-Directory Structure Main Files (which files are most important and why)  
+
+
+####Directory Structure Main Files 
+#####(Description of most important files/folders)
+
+	app/ : Application components
+		-controllers/: Contains controller classes which handle web requests from the user.
+		-helpers/: Holds any helper classes used to assist the model, view, and controller classes.
+		-models/: These are our own created classes.  
+		-views/: These are html templates that are used when browsing the site and are filled in with data.  
 	
-	app/  
-		controllers: These files hold the methods for the project.  
-		helpers: These hold any additional helper functions for the main methods.  
-		models: These are our own created classes.  
-		views: These are html templates that are used when browsing the site and are filled in with data.  
-	
-	config/  
-		routes.rb: This file organizes the routing of the site. It organizes which paths are associated with what variables. This is used when redirecting the user from page to page.  
 
+
+	bin/ : Contains executables
+		-bundle/
+		-rails/
+		-rake/
+
+	ckeditor/ : Directory for CKEDITOR, a text editor incorporated with Note feature.
+
+			*** SOURCE: http://ckeditor.com/
+			*** GITHUB: https://github.com/ckeditor/ckeditor-dev
+			*** DOCUMENTATION: http://docs.cksource.com/
+	
+		-adapters/: Contains jQuery Adapter which provides intergration of jQuery and CKEditor.  Allows using native features of jQuery when using CK Editor.
+		-lang/: Stores language-related functions. 
+		-plugins/: Manages plugins registration and loading.
+		-samples/: Collection of samples to verify if installation was successful.
+		-skins/: Stores sprites and scripts for skin.
+
+		-ckeditor.js: This is the API entry point. The entire CKEditor code runs under this object.
+		-build-config,js: Stores default configuration settings. Changes to this object are reflected in all editor instances, if not specified otherwise for a particular      
+		                  instance.  
+
+		                  *** Resource for setting configuration: http://docs.ckeditor.com/#!/guide/dev_configuration
+
+
+
+	config/ 
+		-routes.rb: This file organizes the routing of the site. It organizes which paths are associated with what variables. This is used when redirecting the user from page to page.  
+
+	
+	
 	db/
-		migrate: These are scripts that make changes to the format of the database.  
-
-	test/  : Testing will be organized throughout this folder  
-		fixtures: These are generic placeholders for when doing testing.  
+		-migrate/: These are scripts that make changes to the format of the database.  
 
 	
 
-
-### Setting up development environment for SBNotes on Ubuntu###
-
-
+	log/ : Contains error logs
+		-development.log: Error log for Rails development environment.
 
 
-CONTENTS  
-I.		SETTING UP GIT  
-II.		INSTALLING RUBY USING RVM  
-III.	INSTALLING RAILS  
+
+	public/ : Directory for web files (HTML files, stylesheets, graphics, Javascript files)
+		-assets/: Contains directories bootstrap/ and ckeditor/
+
+	
+	
+	test/ : Testing will be organized throughout this folder  
+		-fixtures/: These are generic placeholders for when doing testing.  
+
+
+
+	tmp/ : Contains emporary files for intermediate processing.
+
+
+
+	 vendor/ : Libraries provided by third-party vendors
+
+
+
+
+####Setting up development environment for SBNotes on Linux OS
+
+
+######Contents
+
+I.		Setting Up Git 
+II.		Installing Ruby Using RVM  
+III.	Installing Rails  
 IV.		POSTGRESQL  
-V.		FINISHING TOUCHES  
+V.		Finishing 
 
 
 
 
 
-I.	SETTING UP GIT
+######I.	Setting up Git
 
 Install Git and cloning repository to system:
 	
@@ -56,7 +107,7 @@ Or instead move the files from the USB into the folder you will be working in.
 
 
 
-II.	INSTALLING RUBY USING RVM
+######II.	INSTALLING RUBY USING RVM
 
 Update package manager
 
@@ -117,7 +168,7 @@ Install Nokogiri
 
 
 
-III. INSTALLING RAILS
+######III. INSTALLING RAILS
 
 Optional for installing Rails into project-specific gemset
 
@@ -132,7 +183,7 @@ Install Rails
 
 
 
-IV.	POSTGRESQL
+######IV.	POSTGRESQL
 
 Install PostgreSQL and PostGIS
 
@@ -148,7 +199,7 @@ Creating user role in PostgreSQL
 
 
 
-V.	FINISHING TOUCHES
+######V.	FINISHING 
 
 Change directory into root of SBNotes
 
@@ -183,4 +234,4 @@ In order to run the unit tests
 YOU HAVE SUCCESSFULLY SET UP SBNOTES LOCALLY. TO ACCESS THE WEBPAGE 
 ENTER YOUR PREFERRED WEB BROWSER AND NAVIGATE TO "localhost:3000" 
 
-If there are any difficulties setting up, you can also visit www.sbnotes.me to the site in its native form.
+If there are any difficulties setting up, you can also visit  http://www.sbnotes.me  to the site in its native form.
